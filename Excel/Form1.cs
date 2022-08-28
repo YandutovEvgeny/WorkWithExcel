@@ -108,6 +108,7 @@ namespace Excel
             }
         }
 
+        //TODO: Сделать крест и график
         private void button4_Click(object sender, EventArgs e)
         {
             excel.Workbook workbook = application.Workbooks.Add();
@@ -116,7 +117,7 @@ namespace Excel
             {
                 try
                 {
-                    //excel.Series series;
+                    //Крест
                     excel.Worksheet sheet = application.Worksheets[1];
                     excel.Range begin = sheet.Cells[1, 1];
                     excel.Range end = sheet.Cells[count, count];
@@ -131,7 +132,7 @@ namespace Excel
                         sheet.Cells[i, c--].Interior.Color = ColorTranslator.ToOle(Color.Red);
                     }
 
-                    //График
+                    //График пирог
                     for (int i = 1; i <= count; i++)
                     {
                         sheet.Cells[i, count + 1] = random.Next(200);
